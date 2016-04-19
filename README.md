@@ -13,7 +13,6 @@ $ npm run dev
 $ npm run build
 ```
 
----
 ## LICENSE
 
 ```
@@ -32,7 +31,6 @@ $ npm run build
   0. You just DO WHAT THE FUCK YOU WANT TO.
 
 ```
----
 
 ## ONE MORE THING
 
