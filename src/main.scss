@@ -25,7 +25,14 @@ ul{
     list-style-type: none;
   }
 }
+.loader{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
 @import 'components/titleview.scss';
 @import 'components/newsitemcomments.scss';
 @import 'components/newsitemdetail.scss';
 @import 'components/newsitemview.scss';
+@import 'components/loader.scss';
