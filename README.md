@@ -1,6 +1,19 @@
 # hackernews-vuejs
----
 
+## HOW TO PLAY
+
+### Develop
+
+```
+$ npm run dev
+```
+### Release
+
+```
+$ npm run build
+```
+
+---
 ## LICENSE
 
 ```
@@ -19,3 +32,8 @@
   0. You just DO WHAT THE FUCK YOU WANT TO.
 
 ```
+---
+
+## ONE MORE THING
+
+* VIM is awesome!
