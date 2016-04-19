@@ -1,17 +1,15 @@
 <template>
-  <input type="text" v-model="text" />
-  <div>Hello {{ text }}</div>
+  <div>{{ text }}</div>
 </template>
 
 <script>
   export default {
-    
-    data() {
+    data: function() {
       return {
-        text: 'vue'
+        text: 'hello world'
       }
     }
-    
+
   }
 </script>
 <style src="./main.scss" lang="sass"></style>

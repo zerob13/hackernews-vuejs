@@ -1,4 +1,11 @@
-body{
+html,body{
   background:#eee;
-  display:flex;
+  display:block;
+  position:relative;
+  height:100%;
+  width:100%;
 }
+@import 'components/titleview.scss';
+@import 'components/newsitemcomments.scss';
+@import 'components/newsitemdetail.scss';
+@import 'components/newsitemview.scss';
