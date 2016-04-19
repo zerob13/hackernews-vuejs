@@ -1,9 +1,29 @@
+@import 'normalize.scss';
 html,body{
   background:#eee;
   display:block;
   position:relative;
   height:100%;
-  width:100%;
+  width:94%;
+  margin:auto;
+}
+a{
+  color: #039be5;
+  background-color: transparent;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.right{
+  float:right !important;
+}
+.left{
+  float:left!important;
+}
+ul{
+    list-style-type: none;
+  li{
+    list-style-type: none;
+  }
 }
 @import 'components/titleview.scss';
 @import 'components/newsitemcomments.scss';
