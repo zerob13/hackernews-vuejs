@@ -1,13 +1,13 @@
 <template>
 <nav class="navbar">
   <div class="nav-wrapper">
-    <div class="nav-logo left" href='#!/home'>HackerNews</div>
+    <div class="nav-logo left" href="#!/new">HackerNews</div>
     <ul class="right">
-      <li><a href="#!/newest">new</a></li>
-      <li><a href="#!/comments">comments</a></li>
-      <li><a href="#!/show">show</a></li>
-      <li><a href="#!/ask">ask</a></li>
-      <li><a href="#!/jobs">jobs</a></li>
+      <li><a v-link="{path:'new'}">new</a></li>
+      <li><a v-link="{path:'top'}">top</a></li>
+      <li><a v-link="{path:'show'}">show</a></li>
+      <li><a v-link="{path:'ask'}">ask</a></li>
+      <li><a v-link="{path:'job'}">jobs</a></li>
     </ul>
   </div>
 </nav>
