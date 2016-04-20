@@ -4,12 +4,18 @@
   width: 100%;
   height: 56px;
   line-height: 56px;
+
+  @media only screen and (max-width: 992px) {
+    height:56px+56;
+  }
   a{
+
     color:#fff;
   }
   .nav-wrapper{
     position:relative;
     height:100%;
+    display:block;
   }
   .nav-logo{
     position:absolute;
@@ -19,17 +25,39 @@
     padding: 0;
     white-space: nowrap;
     left: 0.5rem;
+    float:left;
+    @media only screen and (max-width: 992px) {
+      display:block;
+      left:50%;
+      transform:translate(-50%,0);
+      text-align:center;
+      float:none;
+    }
   }
-  ul{
+  ul.link-bar{
     margin:0;
     padding:0;
+    float:right;
+    @media only screen and (max-width: 992px){
+      float:none;
+      position:absolute;
+      display:block;
+      width:100%;
+      top:56px;
+      left:50%;
+      transform:translate(-50%,0);
+      background-color: #ee6e73;
+      overflow:scroll;
+      li{
+        width:20%;
+      }
+    }
     li{
       transition: background-color .3s;
       float: left;
       padding: 0;
       &:hover,&.active{
         background-color: rgba(0,0,0,0.1)
-
       }
     }
     a{
@@ -38,6 +66,11 @@
       display: block;
       padding: 0 15px;
       color: inherit;
+
+      @media only screen and (max-width: 992px){
+        padding: 0 12px;
+        text-align:center;
+      }
     }
 
   }

@@ -1,8 +1,8 @@
 <template>
 <nav class="navbar">
   <div class="nav-wrapper">
-    <div class="nav-logo left" href="#!/new">HackerNews</div>
-    <ul class="right">
+    <div class="nav-logo" href="#!/new">HackerNews</div>
+    <ul class="link-bar">
       <li><a v-link="{path:'new'}">new</a></li>
       <li><a v-link="{path:'top'}">top</a></li>
       <li><a v-link="{path:'show'}">show</a></li>

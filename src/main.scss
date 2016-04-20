@@ -20,7 +20,7 @@ a{
   float:left!important;
 }
 ul{
-    list-style-type: none;
+  list-style-type: none;
   li{
     list-style-type: none;
   }
@@ -31,6 +31,16 @@ ul{
   left:50%;
   transform:translate(-50%,-50%);
 }
+.expand-transition {
+  transition: all .3s ease;
+  background-color: #eee;
+  opacity:1;
+}
+
+.expand-enter, .expand-leave {
+  opacity: 0;
+}
+
 @import 'components/titleview.scss';
 @import 'components/newsitemcomments.scss';
 @import 'components/newsitemdetail.scss';

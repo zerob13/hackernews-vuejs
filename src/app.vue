@@ -1,6 +1,6 @@
 <template>
 <titleview></titleview>
-<router-view keep-alive transition transition-mod=out-in>
+<router-view class="view" keep-alive transition="expand" transition-mod=out-in>
 </router-view>
 </template>
 
