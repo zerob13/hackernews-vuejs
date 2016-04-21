@@ -1,11 +1,11 @@
 <template>
-<ul>
-<div class="loader loader-inner square-spin" v-show="items.length==0">
-  <div></div>
-</div>
-  <li v-for="it in items"><a href="{{it.url}}">{{it.title}}</a>
-  </li>
-</ul>
+  <ul class="news-item-list" v-infinite-scroll="loadMore()" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+    <div class="loader loader-inner square-spin" v-show="items.length==0">
+      <div></div>
+    </div>
+    <li v-for="it in items"><a href="{{it.url}}">{{it.title}}</a>
+    </li>
+  </ul>
 </template>
 <script>
   import hackapi from '../store/api.js'
@@ -14,6 +14,8 @@
     data: function() {
       return {
         currentPage: '',
+        busy: true,
+        noMoreItem: false,
         page: 1,
         items: []
       }
@@ -28,6 +30,8 @@
         });
         this.items = [];
         this.page = 1;
+        this.noMoreItem = false;
+        this.busy = true;
         hackapi.on(this.getListener(this.currentPage), this.update);
         this.update();
       }
@@ -38,8 +42,25 @@
       },
       update: function() {
         hackapi.fetchItemsByPage(this.page, this.currentPage).then(items => {
-          this.items = items;
+          console.dir(items)
+          if (items.length == 0) {
+            this.noMoreItem = true;
+          } else {
+            this.noMoreItem = false; //new data coming
+          }
+          this.items = this.items.concat(items);
+          this.busy = false;
         })
+      },
+      loadMore: function() {
+        if (this.noMoreItem) {
+          console.log('no more data...')
+          return;
+        }
+        this.busy = true;
+        console.log('updating...')
+        this.page += 1;
+        this.update();
       }
 
     }
