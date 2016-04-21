@@ -74,6 +74,34 @@ store.fetchItems = ids => {
   }
 }
 
+store.fetchAllByPage = (page, storyId) => {
+  const start = 0
+  const end = page * storiesPerPage
+  var ids;
+  switch (storyId) {
+    case 'new':
+      ids = newStoryIds.slice(start, end)
+      break;
+    case 'top':
+      ids = topStoryIds.slice(start, end)
+      break;
+    case 'ask':
+      ids = askStoryIds.slice(start, end)
+      break;
+    case 'show':
+      ids = showStoryIds.slice(start, end)
+      break;
+    case 'job':
+      ids = jobStoryIds.slice(start, end)
+      break;
+    default:
+      ids = topStoryIds.slice(start, end)
+      break;
+  }
+  return store.fetchItems(ids)
+
+}
+
 /**
  * Fetch items for the given page.
  *

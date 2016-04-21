@@ -1,10 +1,17 @@
 @import 'normalize.scss';
-html,body{
+html{
+  height:100%;
+  width:100%;
+  display:block;
+  position:relative;
+  font-size:62.5%;
+}
+body{
   background:#eee;
   display:block;
   position:relative;
   height:100%;
-  width:94%;
+  width:100%;
   margin:auto;
 }
 a{

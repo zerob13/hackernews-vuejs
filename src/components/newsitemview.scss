@@ -1,3 +1,20 @@
 ul.news-item-list{
   min-height:100%;
+  padding-left:12px;
+  padding-right:12px;
+  li{
+    display:block;
+      &:hover,&.active{
+        background-color: rgba(0,0,0,0.1)
+      }
+    .title{
+      font-size:1.3rem;
+      display:inline-block;
+    }
+    .domain{
+      display:inline-block;
+      color:#ccc;
+      font-size:1.1rem;
+    }
+  }
 }
