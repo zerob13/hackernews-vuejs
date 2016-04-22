@@ -51,13 +51,13 @@
     },
     methods: {},
     computed: {
-      isJob() {
+      isJob: function() {
         return this.item.type === 'job';
       },
-      hasText() {
+      hasText: function() {
         return this.item.hasOwnProperty('text');
       },
-      itemLoaded(){
+      itemLoaded: function() {
         return this.item.hasOwnProperty('id');
       }
     }

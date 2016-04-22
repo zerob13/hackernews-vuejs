@@ -41,6 +41,7 @@
         this.page = 1;
         this.noMoreItem = false;
         this.busy = true;
+        document.title = "HackerNews > " + trans.to.name;
         this.update();
         hackapi.on(this.getListener(this.currentPage), this.updateAll);
       }
