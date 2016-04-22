@@ -3,26 +3,23 @@
     <div class="loader loader-inner square-spin" v-show="items.length==0">
       <div></div>
     </div>
-    <li v-for="it in items">
-      <a class="title" href="{{it.url}}">{{it.title}}</a>
-      <span v-show="it | showDomain" class="domain">({{it.url | domain}})</span>
-      <p class="subtext">
-      <span v-show="it.type | showInfo">
-        {{it.score}} points by
-        <a :href="'#/user/' + it.by">{{it.by}}</a>
-      </span>
-      {{it.time | fromNow}} ago
-      <span class="comments-link" v-show="it.type | showInfo">
-        | <a :href="'#/item/' + it.id">{{it.descendants}} {{it.descendants | pluralize 'comment'}}</a>
-      </span>
-    </p>
-    </li>
+    <Item v-for="it in items"
+          :it="it"
+          track-by="id"> 
+    </Item>
+        <div class="progress" v-show="busy">
+          <div class="indeterminate"></div>
+        </div>
   </ul>
 </template>
 <script>
   import hackapi from '../store/api.js'
+  import Item from './item.vue'
   export default {
     name: 'newsitem-view',
+    components: {
+      Item
+    },
     data: function() {
       return {
         currentPage: '',
@@ -44,8 +41,8 @@
         this.page = 1;
         this.noMoreItem = false;
         this.busy = true;
-        hackapi.on(this.getListener(this.currentPage), this.updateAll);
         this.update();
+        hackapi.on(this.getListener(this.currentPage), this.updateAll);
       }
     },
     computed: {
