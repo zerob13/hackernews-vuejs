@@ -1,0 +1,17 @@
+.item-comment{
+  display:block;
+  position: relative;
+  padding-top:4px;
+  border-bottom: 1px dashed #e0e0e0;
+  .comhead{
+    font-size:1.4rem;
+    display:block;
+  }
+  .comment-content{
+    font-size:1.2rem;
+    display:block;
+  }
+  .child-comments{
+    margin-left:12px;
+  }
+}

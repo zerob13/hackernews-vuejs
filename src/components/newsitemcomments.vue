@@ -1,5 +1,5 @@
 <template>
-  <li v-show="comment.text">
+  <li v-show="comment.text" class="item-comment">
     <div class="comhead">
       <a class="toggle" @click="open = !open">{{open ? '[-]' : '[+]'}}</a>
       <a :href="'#/user/' + comment.by">{{comment.by}}</a>
