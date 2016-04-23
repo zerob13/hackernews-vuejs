@@ -2,6 +2,12 @@
 
 ## HOW TO PLAY
 
+### Install
+
+```
+$ npm install
+```
+
 ### Develop
 
 ```
